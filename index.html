@@ -4,6 +4,383 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chapter Videos</title>
-</head>
-</html>
+<style>
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+    }
 
+    /* Style for the main chapter button */
+    .main-chapter {
+        background-color: #ff0000;
+        color: #fff;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        font-size: 18px;
+        transition: background-color 0.3s;
+    }
+
+    .main-chapter:hover {
+        background-color: #cc0000;
+    }
+
+    /* Style for the container of chapter links */
+    .chapter-links {
+        display: block; /* Ensure the title is always visible - change back to block */
+    }
+
+    /* Style for chapter link items */
+    .chapter-link {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #ff0000;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .chapter-link:hover {
+        color: #cc0000;
+    }
+
+  
+    /* Style for the main video container */
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    }
+
+    /* Style for the main video */
+    #main-video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+     /* Style for the video title */
+     #video-title {
+        position: absolute;
+        top: 10px; /* Adjust top position */
+        left: 10px; /* Adjust left position */
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Main Video Container -->
+<div class="video-container">
+    <iframe id="main-video" src="https://www.dropbox.com/scl/fi/y69xon9wct449ezqnc3bq/1.-Course-Introduction-Overview.mp4?rlkey=wzt3wp0v45h0lcmlohhnqw9yj&raw=1" frameborder="0" allowfullscreen></iframe>
+    <!-- Video Title -->
+    <div id="video-title">1. Course Introduction & Overview</div>
+</div>
+
+<!-- Main Chapter Button -->
+<button class="main-chapter" onclick="toggleChapter()">Introduction</button>
+
+<!-- Container for Chapter Links -->
+<div class="chapter-links" id="chapter-links1">
+    <!-- Introduction chapters -->
+    <a href="https://www.dropbox.com/scl/fi/y69xon9wct449ezqnc3bq/1.-Course-Introduction-Overview.mp4?rlkey=wzt3wp0v45h0lcmlohhnqw9yj&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Course Introduction & Overview</a>
+    <a href="https://www.dropbox.com/scl/fi/c16ypq8a1rbdorb9fjmi6/2.-Teaser-Hacking-a-Windows-10-Computer-Accessing-Their-Webcam.mp4?rlkey=2belzp2qorygziq85iwjzczic&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Teaser - Hacking a Windows 10 Computer & Accessing Their Webcam</a>
+    <a href="https://www.dropbox.com/scl/fi/tayx4y3pkv7wlo5bvgt88/3.-What-Is-Hacking-Why-Learn-It.mp4?rlkey=ehbmoplgl0oajlnu7zdpqg74t&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. What Is Hacking & Why Learn It</a>
+</div>
+
+<!-- Title for "Setting up The Lab" -->
+<button class="main-chapter" onclick="toggleChapter()">Setting up The Lab</button>
+
+<!-- Chapters for "Setting up The Lab" -->
+<div class="chapter-links" id="chapter-links2">
+    <a href="https://www.dropbox.com/scl/fi/fwukwuml6fqmtkla74qhq/1.-Lab-Overview-Needed-Software.mp4?rlkey=nbg9vh7g2uddq451ra9asxa3a&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Lab Overview & Needed Software</a>
+    <a href="https://www.dropbox.com/scl/fi/t0mudyjd4nvykzz5kfh4w/2.-Installing-Kali-2019-As-a-Virtual-Machine.mp4?rlkey=y0p1hy7m3msy1o485i06xjopr&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Installing Kali 2019 As a Virtual Machine</a>
+    <a href="https://www.dropbox.com/scl/fi/2532in1yqz575b9aqbtxp/3.-Creating-Using-Snapshots.mp4?rlkey=i777g1g0wauvas3nkt4f2lzuc&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Creating & Using Snapshots</a>
+</div>
+
+<!-- Title for "Linux Basics" -->
+<button class="main-chapter" onclick="toggleChapter()">Linux Basics</button>
+
+<!-- Chapters for "Linux Basics" -->
+<div class="chapter-links" id="chapter-links3">
+    <a href="https://www.dropbox.com/scl/fi/9mj3my3ta6a3lqhcdz4vj/1.-Basic-Overview-of-Kali-Linux.mp4?rlkey=hb3x8e9meescukgnzld77j4re&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Basic Overview of Kali Linux</a>
+    <a href="https://www.dropbox.com/scl/fi/qg9k1uzgrfyvjppd5tfgq/2.-The-Terminal-Linux-Commands.mp4?rlkey=b5s80khsoh645ekayw7nu2exl&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. The Terminal & Linux Commands</a>
+</div>
+
+<!-- Title for "Network Hacking" -->
+<button class="main-chapter" onclick="toggleChapter()">Network Hacking</button>
+
+<!-- Chapters for "Network Hacking" -->
+<div class="chapter-links" id="chapter-links4">
+    <a href="https://www.dropbox.com/scl/fi/s6yrddgdh2b2uq0bnifut/1.-Network-Penetration-Testing-Introduction.mp4?rlkey=0ftloxvctkt07flkzefrd603z&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Network Penetration Testing Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/20hje2y86hgaigjc7m6od/2.-Networks-Basics.mp4?rlkey=otx5x5uypumatr5cebm7mglhe&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Network Basics</a>
+    <a href="https://www.dropbox.com/scl/fi/9mb0xk851f2nl4jy1y27h/3.-Connecting-a-Wireless-Adapter-To-Kali.mp4?rlkey=ioiki9ydhovcv0wyxenjl9wna&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Connecting a Wireless Adapter To Kali</a>
+    <a href="https://www.dropbox.com/scl/fi/h7xbuys3l1ih7vc2vfrm4/4.-What-is-MAC-Address-How-To-Change-It.mp4?rlkey=fsstrf4fda8gus3do1uccq2tf&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. What is MAC Address & How To Change It</a>
+    <a href="https://www.dropbox.com/scl/fi/i5ecn817y1uziv34afbev/5.-Wireless-Modes-Managed-Monitor.mp4?rlkey=hsfmpxf3h0zom8hsld9lvrut3&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Wireless Modes (Managed & Monitor)</a>
+</div>
+<!-- Title for "Network Hacking - Pre Connection Attacks" -->
+<button class="main-chapter" onclick="toggleChapter()">Network Hacking - Pre Connection Attacks</button>
+
+<!-- Chapters for "Network Hacking - Pre Connection Attacks" -->
+<div class="chapter-links" id="chapter-links5">
+    <a href="https://www.dropbox.com/scl/fi/wkarfht7dp6j7ggsvbakb/1.-Packet-Sniffing-Basics-Using-Airodump-ng.mp4?rlkey=49veupz9ajy711193csgd9rkr&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Packet Sniffing Basics Using Airodump-ng</a>
+    <a href="https://www.dropbox.com/scl/fi/r7wxdbgraq8x8kxnhzi9z/2.-WiFi-Bands-2.4Ghz-5Ghz-Frequencies.mp4?rlkey=gxt05i7b88zkkk338yb66lhqv&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. WiFi Bands - 2.4Ghz & 5Ghz Frequencies</a>
+    <a href="https://www.dropbox.com/scl/fi/fip11kk3r5yg3hjlzkp9u/3.-Targeted-Packet-Sniffing-Using-Airodump-ng.mp4?rlkey=17cbmog2l1ppj04uo8z3da2rm&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Targeted Packet Sniffing Using Airodump-ng</a>
+    <a href="https://www.dropbox.com/scl/fi/a7va3d50vpdvizq9s80hp/4.-Deauthentication-Attack-Disconnecting-Any-Device-From-The-Network.mp4?rlkey=ksflpf34hsp20c13f1bg4759a&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Deauthentication Attack (Disconnecting Any Device From The Network)</a>
+</div>
+
+<!-- Title for "Network Hacking - Gaining Access (WEP WPA WPA2 Cracking)" -->
+<button class="main-chapter" onclick="toggleChapter()">Network Hacking - Gaining Access (WEP WPA WPA2 Cracking)</button>
+
+<!-- Chapters for "Network Hacking - Gaining Access (WEP WPA WPA2 Cracking)" (continued) -->
+<div class="chapter-links" id="chapter-links6">
+    <a href="https://www.dropbox.com/scl/fi/dpqvhwso6xrptzohzf2cs/1.-Gaining-Access-Introduction.mp4?rlkey=onc7hjf19cxwyo0e7guzawaul&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Gaining Access Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/sg7dw4m4td29pa8kgzsbi/2.-WEP-Cracking-Theory-Behind-Cracking-WEP-Encryption.mp4?rlkey=7u8769k80iy9en3hvh3gb5ski&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. WEP Cracking - Theory Behind Cracking WEP Encryption</a>
+    <a href="https://www.dropbox.com/scl/fi/qpma220j5wk5t8my1m39m/3.-WEP-Cracking-Basic-Case.mp4?rlkey=6f4xpee0f1kcqzsikz6kijg5s&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. WEP Cracking - Basic Case</a>
+    <a href="https://www.dropbox.com/scl/fi/7j9bt454dtai9a0cn8nd9/4.-WEP-Cracking-Fake-Authentication.mp4?rlkey=y3jpfx2k42xiw5gpdcfzlgl36&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. WEP Cracking - Fake Authentication</a>
+    <a href="https://www.dropbox.com/scl/fi/p6466f0ymkzvyhyi0njv5/5.-WEP-Cracking-ARP-Request-Replay-Attack.mp4?rlkey=5tgcsi5iqgi4r8fesbksrhjyu&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. WEP Cracking - ARP Request Replay Attack</a>
+    <a href="https://www.dropbox.com/scl/fi/59202t0tljxxmfjmn90y9/6.-WPAWPA2-Cracking-Introduction.mp4?rlkey=hp2a0tekqu880v5xjeyfafvs1&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. WPAWPA2 Cracking - Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/iz91kntagbfzlthq9yok0/7.-WPAWPA2-Cracking-Exploiting-WPS-Feature.mp4?rlkey=zvnorvzncsfh9exqsozyyskqb&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. WPAWPA2 Cracking - Exploiting WPS Feature</a>
+    <a href="https://www.dropbox.com/scl/fi/0gqk2j69uyrlxwerex8yw/8.-WPAWPA2-Cracking-How-To-Capture-The-Handshake.mp4?rlkey=x6ykgq33pibkipl5n07t9y538&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">8. WPAWPA2 Cracking - How To Capture The Handshake</a>
+    <a href="https://www.dropbox.com/scl/fi/depqcwehq6m9qss32c7xl/9.-WPAWPA2-Cracking-Creating-a-Wordlist.mp4?rlkey=klejeejc5uzy9bqq9vdgw7t54&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">9. WPAWPA2 Cracking - Creating a Wordlist</a>
+    <a href="https://www.dropbox.com/scl/fi/klp4ao5bmc4j9qsmtj5km/10.-WPAWPA2-Cracking-Using-a-Wordlist-Attack.mp4?rlkey=fghpoqzpw2o7dh07tt82k77wq&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">10. WPAWPA2 Cracking - Using a Wordlist Attack</a>
+</div>
+
+<!-- Title for "Network Hacking - Post Connection Attacks" -->
+<button class="main-chapter" onclick="toggleChapter()">Network Hacking - Post Connection Attacks</button>
+
+<!-- Chapters for "Network Hacking - Post Connection Attacks" -->
+<div class="chapter-links" id="chapter-links7">
+    <a href="https://www.dropbox.com/scl/fi/rjoxs0375yodosz0lwc1d/1.-Introduction.mp4?rlkey=x3aoftp7w764olqowbl5f6pcj&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/x5ehusk6orlq6ydwn4umw/2.-Installing-Windows-As-a-Virtual-Machine.mp4?rlkey=7prp4eq5y8zug7t0gll9l2bpe&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Installing Windows As a Virtual Machine</a>
+    <a href="https://www.dropbox.com/scl/fi/w70kets2jofyvc3q61sfx/3.-Information-Gathering-Discovering-Connected-Clients-using-netdiscover.mp4?rlkey=fcv5291r6uhiby1inf1rz0d3d&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Information Gathering - Discovering Connected Clients using netdiscover</a>
+    <a href="https://www.dropbox.com/scl/fi/6kpu0v79tefce09h1gpx9/4.-Gathering-More-Information-Using-Zenmap.mp4?rlkey=llev0oahvvv0r7ntf8u12tao3&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Gathering More Information Using Zenmap</a>
+    <a href="https://www.dropbox.com/scl/fi/3gmwiip9ux84qukcz3f34/5.-Gathering-Even-More-Information-Using-Zenmap.mp4?rlkey=90pvjxecj13xisz9rje2ugdll&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Gathering Even More Information Using Zenmap</a>
+    <a href="https://www.dropbox.com/scl/fi/dp7lxol2wpp0aagbkegyi/6.-MITM-ARP-Poisoning-Theory.mp4?rlkey=0k0mu4ph2gu2zu3fzhvn58n7g&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. MITM - ARP Poisoning Theory</a>
+    <a href="https://www.dropbox.com/scl/fi/uxvos8q0t4pjsd2em30ll/7.-MITM-ARP-Spoofing-using-arpspoof.mp4?rlkey=arisuabb9fv1mztzhfi5pin4z&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. MITM - ARP Spoofing using arpspoof</a>
+    <a href="https://www.dropbox.com/scl/fi/fm9e8qhynogn5ofynhtfv/8.-MITM-ARP-Spoofing-Using-MITMf.mp4?rlkey=39hclk536bozf33nskkvi196c&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">8. MITM - ARP Spoofing Using MITMf</a>
+    <a href="https://www.dropbox.com/scl/fi/tdt6xjqcmtosv6y810paw/9.-MITM-Bypassing-HTTPS.mp4?rlkey=f37jubj1md1uey8e23n9kmv8o&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">9. MITM - Bypassing HTTPS</a>
+    <a href="https://www.dropbox.com/scl/fi/9kaqtu3pymqrie8mgs1ff/10.-MITM-DNS-Spoofing.mp4?rlkey=2yrzi5mxa1ot8yzkfekq4pp9r&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">10. MITM - DNS Spoofing</a>
+    <a href="https://www.dropbox.com/scl/fi/0zjrjyh4boownrtl7p6rb/11.-MITM-Capturing-Screen-Of-Target-Injecting-a-Keylogger.mp4?rlkey=klwck5gw5d17uuiijim9j4llr&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">11. MITM - Capturing Screen Of Target & Injecting a Keylogger</a>
+    <a href="https://www.dropbox.com/scl/fi/7b1jwebikfhr7hvocsecv/12.-MITM-Injecting-JavascriptHTML-Code.mp4?rlkey=hl53dsamipnncswqhilernpnm&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">12. MITM - Injecting Javascript/HTML Code</a>
+    <a href="https://www.dropbox.com/scl/fi/odqi9kuiql36ek5ieqb06/13.-MITM-Using-MITMf-Against-Real-Networks.mp4?rlkey=6m13d11n4ivpqmjc477gak5vr&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">13. MITM - Using MITMf Against Real Networks</a>
+    <a href="https://www.dropbox.com/scl/fi/rako1c6s9udj0ngc8fkg3/14.-Wireshark-Basic-Overview-How-To-Use-It-With-MITM-Attacks.mp4?rlkey=8vx58qvy5dq0jbxs88tsv2kdh&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">14. Wireshark - Basic Overview & How To Use It With MITM Attacks</a><a href="https://www.dropbox.com/scl/fi/7lmdlgi0ph87vvzbbvgvv/15.-Wireshark-Sniffing-Data-Analysing-HTTP-Traffic.mp4?rlkey=z5enkloosrhoq8r1xjo7fmlci&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">15. Wireshark - Sniffing Data & Analysing HTTP Traffic</a>
+    <a href="https://www.dropbox.com/scl/fi/p25nntjbe1fk7fvgdnaww/15.-Wireshark-Sniffing-Data-Analysing-HTTP-Traffic.mp4?rlkey=488nooqeoibpewwocsdicbul9&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">15. Wireshark - Sniffing Data & Analysing HTTP Traffic</a>
+    <a href="https://www.dropbox.com/scl/fi/icosnab4ihrnxb7oa1bti/16.-Wireshark-Capturing-Passwords-Cookies-Entered-By-Any-Device-In-The-Network.mp4?rlkey=jo2cpbmckl3u7s801q95sgnkb&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">16. Wireshark - Capturing Passwords & Cookies Entered By Any Device In The Network</a>
+    <a href="https://www.dropbox.com/scl/fi/j0okpovghci6fjlh57gh8/17.-Creating-a-Fake-Access-Point-Honeypot-Theory.mp4?rlkey=6rbdmr3l2mc4j71mkdbh0rmf1&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">17. Creating a Fake Access Point (Honeypot) - Theory</a>
+    <a href="https://www.dropbox.com/scl/fi/2wpcnxj5da2l2gcpxx514/18.-Creating-a-Fake-Access-Point-Honeypot-Practical.vtt?rlkey=omywzsw8a2wvifpxz2orcjet0&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">18. Creating a Fake Access Point (Honeypot) - Practical</a>
+</div>
+<!-- Title for "Network Hacking - Detection & Security" -->
+<button class="main-chapter" onclick="toggleChapter()">Network Hacking - Detection & Security</button>
+
+<!-- Chapters for "Network Hacking - Detection & Security" -->
+<div class="chapter-links" id="chapter-links8">
+    <a href="https://www.dropbox.com/scl/fi/rurrzyq5jovcbw03xu59q/1.-Detecting-ARP-Poisoning-Attacks.mp4?rlkey=0hn2l0u2deocrezt8v3bq0k6e&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Detecting ARP Poisoning Attacks</a>
+    <a href="https://www.dropbox.com/scl/fi/qukdke4pzim0fk0w49cb1/2.-Detecting-suspicious-Activities-Using-Wireshark.mp4?rlkey=i17mdcnw8yonqok0xuck135g5&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Detecting suspicious Activities Using Wireshark</a>
+</div>
+
+<!-- Title for "Gaining Access To Computer Devices" -->
+<button class="main-chapter" onclick="toggleChapter()">Gaining Access To Computer Devices</button>
+
+<!-- Chapters for "Gaining Access To Computer Devices" -->
+<div class="chapter-links" id="chapter-links9">
+    <a href="https://www.dropbox.com/scl/fi/8dz0xjc24v547vofbj1bs/1.-Gaining-Access-Introduction.mp4?rlkey=hp7m0uwz0wb607s6mjnobbgrw&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Gaining Access Introduction</a>
+</div>
+<!-- Title for "Gaining Access - Server Side Attacks" -->
+<button class="main-chapter" onclick="toggleChapter()">Gaining Access - Server Side Attacks</button>
+
+<!-- Chapters for "Gaining Access - Server Side Attacks" -->
+<div class="chapter-links" id="chapter-links10">
+    <a href="https://www.dropbox.com/scl/fi/dxnu8lurwnlgru4tiwxbl/1.-Installing-Metasploitable-As-a-Virtual-Machine.mp4?rlkey=rkhjjz3cv4unzftifbcsd7sf9&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Installing Metasploitable As a Virtual Machine</a>
+    <a href="https://www.dropbox.com/scl/fi/0e0104w0q2ddouwx9erwi/2.-Introduction.mp4?rlkey=rw50bagj2fcfhpdu1zr6xx4kk&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/lp4ad9mxq8ravjx2aj405/3.-Basic-Information-Gathering-Exploitation.mp4?rlkey=6uz7glnm09p1dfh0of4f878qb&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Basic Information Gathering & Exploitation</a>
+    <a href="https://www.dropbox.com/scl/fi/ksqlqhhbn67zkevq451uf/4.-Using-a-Basic-Metasploit-Exploit.mp4?rlkey=304arkfgyu553irxi4hsrtjq3&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Using a Basic Metasploit Exploit</a>
+    <a href="https://www.dropbox.com/scl/fi/zxzaq8ma3d7gaa77tfs83/5.-Exploiting-a-Code-Execution-Vulnerability.mp4?rlkey=15f51vaoqcw97q5sk18wmysqq&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Exploiting a Code Execution Vulnerability</a>
+    <a href="https://www.dropbox.com/scl/fi/eozm6dupbcxhp19v7zvn4/6.-MSFC-Installing-MSFC-Metasploit-Community.mp4?rlkey=duuml3w2jkih8svulzb0bigmi&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. MSFC - Installing MSFC (Metasploit Community)</a>
+    <a href="https://www.dropbox.com/scl/fi/zbgrzw36553gub4282glb/7.-MSFC-Scanning-Target-s-For-Vulnerabilities.mp4?rlkey=dtiq3m5pcn4ft09iu3rzp2e5x&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. MSFC - Scanning Target(s) For Vulnerabilities</a>
+    <a href="https://www.dropbox.com/scl/fi/ktoldlyl37bfqgvif08wm/8.-MSFC-Analysing-Scan-results-Exploiting-Target-System.mp4?rlkey=pxtxey3my1eu77lyutynyuday&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">8. MSFC - Analysing Scan results & Exploiting Target System</a>
+    <a href="https://www.dropbox.com/scl/fi/9orwj4tsg19mtx5u85fzp/9.-Nexpose-Installing-Nexpose.mp4?rlkey=zrimljqr5gh70qhvafqthupin&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">9. Nexpose - Installing Nexpose</a>
+    <a href="https://www.dropbox.com/scl/fi/hmvp51hs1x6y7c0m8v04h/10.-Nexpose-How-To-Configure-Launch-a-Scan.mp4?rlkey=8cv9w1y9s4jmfcm00kfsq6b4q&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">10. Nexpose - How To Configure & Launch a Scan</a>
+    <a href="https://www.dropbox.com/scl/fi/bg6s2nughzcpjd0sasib1/11.-Nexpose-Analysing-Scan-Results-Generating-Reports.mp4?rlkey=1e5x2zrg55k85h20lkrr5bwte&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">11. Nexpose - Analysing Scan Results & Generating Reports</a>
+</div>
+<!-- Title for "Gaining Access - Client Side Attacks" -->
+<button class="main-chapter" onclick="toggleChapter()">Gaining Access - Client Side Attacks</button>
+
+<!-- Chapters for "Gaining Access - Client Side Attacks" -->
+<div class="chapter-links" id="chapter-links11">
+    <a href="https://www.dropbox.com/scl/fi/mz5tojmvxko1l3vcbzlb1/1.-Introduction.mp4?rlkey=7tp5d7oaoh3h98ztb2evfmrld&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/hexdh00rpr9l2a4yon11w/2.-Installing-Veil-3.1.mp4?rlkey=3nom6l2rqy9l47vhj7qb8sq64&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Installing Veil 3.1</a>
+    <a href="https://www.dropbox.com/scl/fi/wjmafzwadnyqv5dfmhmao/3.-Veil-Overview-Payloads-Basics.mp4?rlkey=hrtgzr8emjlaht7ercbyaoki7&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Veil Overview & Payloads Basics</a>
+    <a href="https://www.dropbox.com/scl/fi/b2ikbvqi6q15tctp53dkb/4.-Generating-An-Undetectable-Backdoor-Using-Veil-3.mp4?rlkey=gy934knhcjoiexukfidqc6r7m&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Generating An Undetectable Backdoor Using Veil 3</a>
+    <a href="https://www.dropbox.com/scl/fi/mdy4gaa12v5ujc0t2qc2j/5.-Listening-For-Incoming-Connections.mp4?rlkey=t7yl43kgoevtbz7j1n8g1z83r&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Listening For Incoming Connections</a>
+    <a href="https://www.dropbox.com/scl/fi/w9yzkw283i9wmnoqudyqp/6.-Using-A-Basic-Delivery-Method-To-Test-The-Backdoor-Hack-Windows-10.mp4?rlkey=hv31heivhcuk3vj1nh1lbkm78&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. Using A Basic Delivery Method To Test The Backdoor & Hack Windows 10</a>
+    <a href="https://www.dropbox.com/scl/fi/a8kt7w8s15ktizb2em1yy/7.-Backdoor-Delivery-Method-1-Using-a-Fake-Update.mp4?rlkey=ygfiky8d46k3rgqy39pe8aq4l&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. Backdoor Delivery Method 1 - Using a Fake Update</a>
+    <a href="https://www.dropbox.com/scl/fi/4qoxx6tvzrib8m8qev0bz/8.-Backdoor-Delivery-Method-2-Backdooring-Downloads-on-The-Fly.mp4?rlkey=gaxh9pzvkph03orb5kg22ue6k&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">8. Backdoor Delivery Method 2 - Backdooring Downloads on The Fly</a>
+    <a href="https://www.dropbox.com/scl/fi/htnfj79yb7pcz7p8i0xel/9.-How-to-Protect-Yourself-From-The-Discussed-Delivery-Methods.mp4?rlkey=gqlkbrfadi5xodxonmi81tugf&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">9. How to Protect Yourself From The Discussed Delivery Methods</a>
+</div>
+<!-- Title for "Gaining Access - Client Side Attacks - Social Engineering" -->
+<button class="main-chapter" onclick="toggleChapter()">Gaining Access - Client Side Attacks - Social Engineering</button>
+
+<!-- Chapters for "Gaining Access - Client Side Attacks - Social Engineering" -->
+<div class="chapter-links" id="chapter-links12">
+    <a href="https://www.dropbox.com/scl/fi/zodzyjodg6e005ccjjgls/1.-Introduction.mp4?rlkey=qypff5mrkik99g6j8d1mmh2qc&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/7rj2jyubjc282j8cgzm0w/2.-Maltego-Basics.mp4?rlkey=90qawnymw9gfxk8i7f3uwctrw&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Maltego Basics</a>
+    <a href="https://www.dropbox.com/scl/fi/ve2io9udnaaz0j23yqpzr/3.-Discovering-Websites-Links-Social-Networking-Accounts-Associated-With-Target.mp4?rlkey=1zi0nk9hk0qyuu2pomxldwpoz&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Discovering Websites, Links & Social Networking Accounts Associated With Target</a>
+    <a href="https://www.dropbox.com/scl/fi/8e8rvych25ryq8b8w7lhz/4.-Discovering-Twitter-Friends-Associated-Accounts.mp4?rlkey=6p2byyrqpzpu5bqju3hv3peho&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Discovering Twitter Friends & Associated Accounts</a>
+    <a href="https://www.dropbox.com/scl/fi/rqzkow5x2u3cvyff2gsns/5.-Discovering-Emails-Of-The-Target-s-Friends.mp4?rlkey=tasvfcpt3la568ohk0391oro4&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Discovering Emails Of The Target's Friends</a>
+    <a href="https://www.dropbox.com/scl/fi/em307d9ic5ifth7bymwyg/6.-Analysing-The-Gathered-Info-Building-An-Attack-Strategy.mp4?rlkey=1fgvv18mlekfoia55w9zxzpdn&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. Analysing The Gathered Info & Building An Attack Strategy</a>
+    <a href="https://www.dropbox.com/scl/fi/85zw8ouu897x29gnogfxb/7.-Backdooring-Any-File-Type-images-pdf-s-...etc.mp4?rlkey=zbgcmxpxmh1cjtjhpq432g04b&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. Backdooring Any File Type (images, pdf's ...etc)</a>
+    <a href="https://www.dropbox.com/scl/fi/zhrqnunt9pq2muka60drf/8.-Compiling-Changing-Trojan-s-Icon.mp4?rlkey=lha88kmxjtbxxg0satae4fpiz&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">8. Compiling & Changing Trojan's Icon</a>
+    <a href="https://www.dropbox.com/scl/fi/53aauaux8rf3qhoixjwar/9.-Spoofing-.exe-Extension-To-Any-Extension-jpg-pdf-...etc.mp4?rlkey=644uqbr19ro80ce561n6faka6&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">9. Spoofing .exe Extension To Any Extension (jpg, pdf ...etc)</a>
+    <a href="https://www.dropbox.com/scl/fi/k66mv6h3ohzvy3yi3zun7/10.-Spoofing-Emails-Setting-Up-am-SMTP-Server.mp4?rlkey=3yxio28d3ba42z73fcdjqtmva&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">10. Spoofing Emails - Setting Up am SMTP Server</a>    <a href="https://www.dropbox.com/scl/fi/4oml20fb8iiu6tbikcvsp/11.-Email-Spoofing-Sending-Emails-as-Any-Email-Account.mp4?rlkey=1cbhfmkfno57kvtncmsh1ikt1&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">11. Email Spoofing - Sending Emails as Any Email Account</a>
+    <a href="https://www.dropbox.com/scl/fi/09f2ss58wsd70pwxrzug4/12.-BeEF-Overview-Basic-Hook-Method.mp4?rlkey=kjsam5e2u9i6ynbwaa1kf5xiz&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">12. BeEF Overview & Basic Hook Method</a>
+    <a href="https://www.dropbox.com/scl/fi/spa96i331lbcr66zxtlum/13.-BeEF-hooking-targets-using-MITMf.mp4?rlkey=dn2d4hhpdjy1et3duzadz7r4t&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">13. BeEF - hooking targets using MITMf</a>
+    <a href="https://www.dropbox.com/scl/fi/ll1zxxo7fjrpb296n0haa/14.-BeEF-Running-Basic-Commands-On-Target.mp4?rlkey=nm37iii8daljc3jsgccu7nhbe&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">14. BeEF - Running Basic Commands On Target</a>
+    <a href="https://www.dropbox.com/scl/fi/pcwdeq713jb2bv5xvklng/15.-BeEF-Stealing-CredentialsPasswords-Using-A-Fake-Login-Prompt.mp4?rlkey=izflrh33onj17qkxl7as2pj0h&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">15. BeEF - Stealing CredentialsPasswords Using A Fake Login Prompt</a>
+    <a href="https://www.dropbox.com/scl/fi/evnn9jremho7979rl9tn5/16.-BeEF-Gaining-Full-Control-Over-Windows-Target.mp4?rlkey=8htkrln3niy3eu2l21e12h4vw&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">16. BeEF - Gaining Full Control Over Windows Target</a>
+    <a href="https://www.dropbox.com/scl/fi/fd0ag9pmtz41gdfqps01j/17.-Detecting-Trojans-Manually.mp4?rlkey=5jia5hnxjx50kvm7c3uxm1s9t&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">17. Detecting Trojans Manually</a>
+    <a href="https://www.dropbox.com/scl/fi/a6sfgv59ghnp0da2wdi6d/18.-Detecting-Trojans-Using-a-Sandbox.mp4?rlkey=9jx5mlz5c017mdqhs2zkd49xi&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">18. Detecting Trojans Using A Sandbox</a>
+<!-- Title for "Gaining Access - Using The Above Attacks Outside The Local Network" -->
+<button class="main-chapter" onclick="toggleChapter()">Gaining Access - Using The Above Attacks Outside The Local Network</button>
+</div>
+<div class="chapter-links" id="chapter-links13">
+    <a href="https://www.dropbox.com/scl/fi/a7a6qmc1mj5hw28n6xc8t/1.-Overview-of-the-Setup.mp4?rlkey=n0uwsqaj57npj4teodomt82k4&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Overview of the Setup</a>
+    <a href="https://www.dropbox.com/scl/fi/38ixd1edld16iasupytsi/2.-Ex1-Generating-a-Backdoor-That-Works-Outside-The-Network.mp4?rlkey=03zi5dm8d3r61xqv4hzxl0h05&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Ex1 - Generating a Backdoor That Works Outside The Network</a>
+    <a href="https://www.dropbox.com/scl/fi/ptwgbb3qjj8nmcucvjfy4/3.-Configuring-The-Router-To-Forward-Connections-To-Kali.mp4?rlkey=lae63emgrfhq28w2auxwfl3j4&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Configuring The Router To Forward Connections To Kali</a>
+    <a href="https://www.dropbox.com/scl/fi/48u4a8hcda590faofzn1r/4.-Ex2-Using-BeEF-Outside-The-Network.mp4?rlkey=dit71nmkz0167uwd7gqq442hy&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Ex2 - Using BeEF Outside The Network</a>
+</div>
+
+<!-- Title for "Post Exploitation" -->
+<button class="main-chapter" onclick="toggleChapter()">Post Exploitation</button>
+
+<!-- Chapters for "Post Exploitation" -->
+<div class="chapter-links" id="chapter-links14">
+    <a href="https://www.dropbox.com/scl/fi/tldtwccdg2iwzpmvshwei/1.-Introduction.mp4?rlkey=ctuq93011xjnxrdoonz5vuxnq&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Introduction</a>
+    <a href="https://www.dropbox.com/scl/fi/rwbz84fs9jt331tbprnoq/2.-Meterpreter-Basics.mp4?rlkey=xb8n8ffg2by11ijdlhxqczj57&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Meterpreter Basics</a>
+    <a href="https://www.dropbox.com/scl/fi/lhyfzttil1abzetwmjqgi/3.-File-System-Commands.mp4?rlkey=pkfvm2p7phllx7mueykhm8fq5&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. File System Commands</a>
+    <a href="https://www.dropbox.com/scl/fi/8d5asqrrkp15frghc8vxx/4.-Maintaining-Access-Basic-Methods.mp4?rlkey=bk3e4ta68fgz3ut7m0s4kc5fx&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Maintaining Access - Basic Methods</a>
+    <a href="https://www.dropbox.com/scl/fi/ujr098mmnjfuiaafqyzjb/5.-Maintaining-Access-Using-a-Reliable-Undetectable-Method.mp4?rlkey=6f9pzbfy6672giz0ii1ahmfto&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Maintaining Access - Using a Reliable & Undetectable Method</a>
+    <a href="https://www.dropbox.com/scl/fi/5q6eso0ijusdaxzmri0gd/6.-Spying-Capturing-Key-Strikes-Taking-Screen-Shots.mp4?rlkey=96pv5n29lmytuquutg9j6j8l6&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. Spying - Capturing Key Strikes & Taking Screen Shots</a>
+    <a href="https://www.dropbox.com/scl/fi/0wog0xsyi8hbtrf38p2df/7.-Pivoting-Theory-What-is-Pivoting.mp4?rlkey=0lglzne4zw3q4addh71yo2s32&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. Pivoting - Theory (What is Pivoting)</a>
+    <a href="https://www.dropbox.com/scl/fi/trwpb2sbds9c5i3g60tjp/8.-Pivoting-Exploiting-Devices-on-The-Same-Network-As-The-Target-Computer.mp4?rlkey=d53gln2yee9taig4irz5xpr23&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">8. Pivoting - Exploiting Devices on The Same Network As The Target Computer</a>
+</div>
+
+<!-- Title for "Website Hacking" -->
+<button class="main-chapter" onclick="toggleChapter()">Website Hacking</button>
+
+<!-- Chapters for "Website Hacking" -->
+<div class="chapter-links" id="chapter-links15">
+    <a href="https://www.dropbox.com/scl/fi/1s0ky43t41anv46jomvtg/1.-Introduction-What-Is-A-Website.mp4?rlkey=a58msgk6h76m09arxq42f6mnl&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Introduction - What Is A Website</a>
+    <a href="https://www.dropbox.com/scl/fi/6jea2nnsiydgqg5m6afk5/2.-How-To-Hack-a-Website.mp4?rlkey=o3vsto1bid0sp0kgec2phsze3&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. How To Hack a Website</a>
+</div>
+
+<!-- Title for "Website Hacking - Information Gathering" -->
+<button class="main-chapter" onclick="toggleChapter()">Website Hacking - Information Gathering</button>
+
+<!-- Chapters for "Website Hacking - Information Gathering" -->
+<div class="chapter-links" id="chapter-links16">
+    <a href="https://www.dropbox.com/scl/fi/77watx83ovhz1wqptn7fu/1.-Gathering-Basic-Information-Using-Whois-Lookup.mp4?rlkey=vbzx7z2dt6ftusbp13tmbin7f&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Gathering Basic Information Using Whois Lookup</a>
+    <a href="https://www.dropbox.com/scl/fi/nmqp1carok0s27u32thzp/2.-Discovering-Technologies-Used-On-The-Website.mp4?rlkey=en9yb8fm8d6e6ofua1uke3clf&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Discovering Technologies Used On The Website</a>
+    <a href="https://www.dropbox.com/scl/fi/itsl4ssar9odgtxk9irs1/3.-Gathering-Comprehensive-DNS-Information.mp4?rlkey=i22wv7ixz497tpcuvbi6izamn&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Gathering Comprehensive DNS Information</a>
+    <a href="https://www.dropbox.com/scl/fi/r1fkgvhjmasna2vfic8ap/4.-Discovering-Websites-On-The-Same-Server.mp4?rlkey=s8bmp7euvqpqh3hj8boq93unx&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Discovering Websites On The Same Server</a>
+    <a href="https://www.dropbox.com/scl/fi/qn9ew3kpo5v4iux78r76p/5.-Discovering-Subdomains.mp4?rlkey=l3igpyjm71vsm2uuujcgweal7&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Discovering Subdomains</a>
+    <a href="https://www.dropbox.com/scl/fi/f5zv883ecd7mjuov0jcsm/6.-Discovering-Sensitive-Files.mp4?rlkey=9li8s11gpd10b2j06zu6hcgxi&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. Discovering Sensitive Files</a>
+    <a href="https://www.dropbox.com/scl/fi/yyehxtsuwwi0azt9s7gof/7.-Analysing-Discovered-Files.mp4?rlkey=78h59olsqlrumepa60zl9izin&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. Analysing Discovered Files</a>
+</div>
+<!-- Title for "Website Hacking - File Upload, Code Execution & File Inclusion Vulns" -->
+<button class="main-chapter" onclick="toggleChapter()">Website Hacking - File Upload, Code Execution & File Inclusion Vulns</button>
+
+<!-- Chapters for "Website Hacking - File Upload, Code Execution & File Inclusion Vulns" -->
+<div class="chapter-links" id="chapter-links17">
+    <a href="https://www.dropbox.com/scl/fi/32b4uuz82ygvxph0wmyqt/1.-Discovering-Exploiting-File-Upload-Vulnerabilities.mp4?rlkey=6w0ko2fzfu5dmw75o996ve2pw&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Discovering & Exploiting File Upload Vulnerabilities</a>
+    <a href="https://www.dropbox.com/scl/fi/aw2qxt8fvl6jazzepawk0/2.-Discovering-Exploiting-Code-Execution-Vulnerabilities.mp4?rlkey=j4z713mogr9ivlzx2or0hr5br&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Discovering & Exploiting Code Execution Vulnerabilities</a>
+    <a href="https://www.dropbox.com/scl/fi/mqwxel64qcevcfsjf4u2t/3.-Discovering-Exploiting-Local-File-Inclusion-Vulnerabilities.mp4?rlkey=ez494q1k3e7ey6evp1nq7xtk9&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Discovering & Exploiting Local File Inclusion Vulnerabilities</a>
+    <a href="https://www.dropbox.com/scl/fi/dtu7wwqcsv0k3fjtnfbl0/4.-Remote-File-Inclusion-Vulnerabilities-Configuring-PHP-Settings.mp4?rlkey=5djxarlqw6wv3sbv2kh2fs0gl&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Remote File Inclusion Vulnerabilities - Configuring PHP Settings</a>
+    <a href="https://www.dropbox.com/scl/fi/mo3s7sqkybmziqk1k391b/5.-Remote-File-Inclusion-Vulnerabilities-Discovery-Exploitation.mp4?rlkey=ppgcbeb4t6iq4mbm9oumnhfvm&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Remote File Inclusion Vulnerabilities - Discovery & Exploitation</a>
+    <a href="https://www.dropbox.com/scl/fi/wkavw1qic9b97nxehrrqn/6.-Preventing-The-Above-Vulnerabilities.mp4?rlkey=3eva09caexntb2ldll2nqiqy7&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. Preventing The Above Vulnerabilities</a>
+</div>
+
+<!-- Title for "Website Hacking - SQL Injection Vulnerabilities" -->
+<button class="main-chapter" onclick="toggleChapter()">Website Hacking - SQL Injection Vulnerabilities</button>
+
+<!-- Chapters for "Website Hacking - SQL Injection Vulnerabilities" -->
+<div class="chapter-links" id="chapter-links18">
+    <a href="https://www.dropbox.com/scl/fi/j4hxwfwnkl9m03k7i4p01/1.-What-is-SQL.mp4?rlkey=hkt3o66hg7ao08iukqpfe4a9r&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. What is SQL</a>
+    <a href="https://www.dropbox.com/scl/fi/6ug4urlfzjuvowdpfq81v/2.-Dangers-of-SQL-Injection-Vulnerabilities.mp4?rlkey=3kaavwo51s8wm7bufymoc0qua&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Dangers of SQL Injection Vulnerabilities</a>
+    <a href="https://www.dropbox.com/scl/fi/7vgr0cbio47jbdasjfpbi/3.-Discovering-SQL-injections-In-POST.mp4?rlkey=rkdej3tsr6zncs1ddlq9u715p&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Discovering SQL injections In POST</a>
+    <a href="https://www.dropbox.com/scl/fi/0opveltihhm3u71u8hx4h/4.-Bypassing-Logins-Using-SQL-injection-Vulnerability.mp4?rlkey=crzreqpaq7wabwhky4f0fw85h&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Bypassing Logins Using SQL injection Vulnerability</a>
+    <a href="https://www.dropbox.com/scl/fi/frldrx1mpqd2u0d4y9fi0/5.-Discovering-SQL-injections-in-GET.mp4?rlkey=y0lrr1wrhgskmvt792se07wlv&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Discovering SQL injections in GET</a>
+    <a href="https://www.dropbox.com/scl/fi/m7y85pcgdsecz2qx8a7in/6.-Reading-Database-Information.mp4?rlkey=klcyn92945ei34cgcakljflpf&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">6. Reading Database Information</a>
+    <a href="https://www.dropbox.com/scl/fi/itzey6zvwi5m5zdrljk7f/7.-Finding-Database-Tables.mp4?rlkey=ul9kklzsu856756cjxrfg6hmh&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">7. Finding Database Tables</a>
+    <a href="https://www.dropbox.com/scl/fi/g9cfhg8m18yquxwuus0ut/8.-Extracting-Sensitive-Data-Such-As-Passwords.mp4?rlkey=bj6crf4cu88v6bwz1gscwxzyz&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">8. Extracting Sensitive Data Such As Passwords</a>
+    <a href="https://www.dropbox.com/scl/fi/ml8gor1gmilxyf4dfm72o/9.-Reading-Writing-Files-On-The-Server-Using-SQL-Injection-Vulnerability.mp4?rlkey=5sqtumdt925j6mb27mbh1ymu1&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">9. Reading & Writing Files On The Server Using SQL Injection Vulnerability</a>
+    <a href="https://www.dropbox.com/scl/fi/z1ccv4xi21fnxeuh04s13/10.-Discovering-SQL-Injections-Extracting-Data-Using-SQLmap.mp4?rlkey=ln3lyzyhjpiagb5nys9z7f9fe&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">10. Discovering SQL Injections & Extracting Data Using SQLmap</a>
+    <a href="https://www.dropbox.com/scl/fi/90pqmqv6uhr05sqwtg2w6/11.-The-Right-Way-To-Prevent-SQL-Injection.mp4?rlkey=3c1ntthzsl3zzl4hhrlc9ud8x&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">11. The Right Way To Prevent SQL Injection</a>
+</div>
+
+<!-- Title for "Website Hacking - Cross Site Scripting Vulnerabilities" -->
+<button class="main-chapter" onclick="toggleChapter()">Website Hacking - Cross Site Scripting Vulnerabilities</button>
+
+<!-- Chapters for "Website Hacking - Cross Site Scripting Vulnerabilities" -->
+<div class="chapter-links" id="chapter-links19">
+    <a href="https://www.dropbox.com/scl/fi/xjlivlrih2s3ghruygwo1/1.-Introduction-What-is-XSS-or-Cross-Site-Scripting.mp4?rlkey=96iz6w4k7n42frgnpo2nt4i21&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Introduction - What is XSS or Cross Site Scripting</a>
+    <a href="https://www.dropbox.com/scl/fi/3wb7jahkctxuvx6bzr78n/2.-Discovering-Reflected-XSS.mp4?rlkey=29tprkqmxjpmrfdnaveevebci&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Discovering Reflected XSS</a>
+    <a href="https://www.dropbox.com/scl/fi/z0ap2wc3xt6uhq9tcu7qb/3.-Discovering-Stored-XSS.mp4?rlkey=hheoqddl3d333tinntszdbu5c&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">3. Discovering Stored XSS</a>
+    <a href="https://www.dropbox.com/scl/fi/n1dii0ri0vi2szr3gwzm0/4.-Exploiting-XSS-Hooking-Vulnerable-Page-Visitors-To-BeEF.mp4?rlkey=ggnoujqnbiys61xk6uqni3uc6&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">4. Exploiting XSS - Hooking Vulnerable Page Visitors To BeEF</a>
+    <a href="https://www.dropbox.com/scl/fi/5m6fcwf1gymvbcr6uuc4l/5.-Preventing-XSS-Vulnerabilities.mp4?rlkey=brxft329vvo0hbj2wa2nu4cfg&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">5. Preventing XSS Vulnerabilities</a>
+</div>
+
+<!-- Title for "Website Hacking - Discovering Vulnerabilities Automatically Using OWASP ZAP" -->
+<button class="main-chapter" onclick="toggleChapter()">Website Hacking - Discovering Vulnerabilities Automatically Using OWASP ZAP</button>
+
+<!-- Chapters for "Website Hacking - Discovering Vulnerabilities Automatically Using OWASP ZAP" -->
+<div class="chapter-links" id="chapter-links20">
+    <a href="https://www.dropbox.com/scl/fi/4nfgxxbqyg592hqf3hg8q/1.-Scanning-Target-Website-For-Vulnerabilities.mp4?rlkey=wft7wyyl4wpsnz6faqh6fgrwn&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">1. Scanning Target Website For Vulnerabilities</a>
+    <a href="https://www.dropbox.com/scl/fi/abrnyh5atl98ugz34e83a/2.-Analysing-Scan-Results.mp4?rlkey=ai3bynl1uf10i6x76k1hw47z8&raw=1" class="chapter-link" onclick="changeVideo(this); return false;">2. Analysing Scan Results</a>
+</div>
+
+<script>
+    // Function to toggle the display of all chapter links
+    function toggleChapter() {
+        var chapterLinks = document.querySelectorAll('.chapter-links');
+        for (var i = 0; i < chapterLinks.length; i++) {
+            if (chapterLinks[i].style.display === 'block') {
+                chapterLinks[i].style.display = 'none';
+            } else {
+                chapterLinks[i].style.display = 'block';
+            }
+        }
+    }
+
+    // Function to change the main video source when a chapter link is clicked
+    function changeVideo(link) {
+        var mainVideo = document.getElementById('main-video');
+        mainVideo.src = link.href;
+
+        // Update video title
+        var videoTitle = document.getElementById('video-title');
+        videoTitle.innerHTML = link.innerHTML;
+
+        // Hide chapter links after selecting one
+        var chapterLinks = document.querySelectorAll('.chapter-links');
+        for (var i = 0; i < chapterLinks.length; i++) {
+            chapterLinks[i].style.display = 'block';
+        }
+    }
+</script>
+</script>
+
+</body>
+</html>
